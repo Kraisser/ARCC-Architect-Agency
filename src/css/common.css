@@ -1,0 +1,7 @@
+* {
+	box-sizing: border-box;
+}
+.contentSize {
+	max-width: 1070px;
+	justify-self: center;
+}
