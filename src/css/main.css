@@ -157,10 +157,101 @@
 	border: none;
 	background-color: transparent;
 	position: absolute;
+	cursor: pointer;
 }
 .playerPlayBut.video-active {
 	display: none;
 }
 .aboutArcPlayer.player-active:hover {
 	filter: brightness(80%);
+	cursor: pointer;
+}
+
+/* TextSlider */
+.textSliderWrapper {
+	max-width: 946px;
+}
+.textSliderSection {
+	display: grid;
+	margin-bottom: 100px;
+	position: relative;
+}
+.textSlide {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	grid-gap: 10px;
+	max-width: 980px;
+	cursor: pointer;
+}
+.textSlideContent {
+	display: grid;
+	grid-gap: 20px;
+}
+.textSlideContentText {
+	font-size: 34px;
+	font-weight: 700;
+	line-height: 1.8em;
+}
+.textSlideContentAuthor {
+	font-size: 18px;
+	line-height: 1.8em;
+}
+.textSlideContentAuthor span {
+	font-weight: 700;
+}
+.textSliderDots {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, 15px);
+	grid-gap: 11px;
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	justify-content: end;
+	padding-right: 30px;
+}
+.textSliderDots li {
+	font-size: 0;
+	line-height: 0;
+}
+.textSliderDots li button {
+	display: block;
+	width: 15px;
+	height: 15px;
+	border-radius: 50%;
+	cursor: pointer;
+	background-color: rgba(255, 255, 255, 0.2);
+	transition: all 0.3s ease;
+}
+.textSliderDots li button:hover {
+	background-color: rgba(255, 255, 255, 0.5);
+}
+.textSliderDots li button:focus-visible {
+	border: none;
+	outline: none;
+	box-shadow: 0 0 5px #fff;
+}
+.textSliderDots li.slick-active button {
+	background-color: #fff;
+}
+
+/* Partners */
+.partnersSection {
+	display: grid;
+}
+.partnersWrapper {
+	width: 980px;
+	justify-self: stretch;
+	display: grid;
+	grid-gap: 40px;
+	justify-content: space-between;
+	grid-template-columns: repeat(4, auto);
+	grid-template-rows: repeat(2, auto);
+}
+.partnersWrapper img {
+	justify-self: center;
+	align-self: center;
 }
