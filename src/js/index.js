@@ -1,9 +1,8 @@
 import 'normalize.css';
 
-import '../css/common.css';
-import '../css/variables.css';
-import '../css/header.css';
-import '../css/main.css';
+import '../scss/common.scss';
+import '../scss/header-sass.scss';
+import '../scss/main.scss';
 
 import $ from 'jquery';
 import slick from 'slick-carousel';

@@ -1,0 +1,316 @@
+@import './mixins.scss';
+@import './variables.scss';
+
+.main {
+	background-color: #111111;
+	color: #fff;
+}
+.aboutUsSection {
+	display: grid;
+	background: url('../assets/background/bx_bx-buildings.png') 109% 109% no-repeat;
+}
+.aboutUsWrapper {
+	padding: 197px 50px 0;
+	margin-bottom: 182px;
+}
+.aboutUsHeader {
+	margin-bottom: 56px;
+	h2 {
+		margin: 0;
+		@include font(34px, 1.8em);
+	}
+}
+.aboutUsDesc {
+	@include grid(grid-template-columns, 1fr 1fr, 165px);
+	@include font(16px, 1.8em);
+	margin-bottom: 65px;
+}
+.aboutUsList {
+	@include grid(grid-template, repeat(2, 1fr) / repeat(3, auto), 25px 50px);
+	justify-content: space-between;
+}
+.aboutUsItem {
+	@include grid(grid-template-columns, auto 1fr, 25px);
+
+	div {
+		@include grid(grid-template-columns, 1fr, 12px);
+	}
+	h3 {
+		margin: 0;
+		@include font(22px, 1.7em, 700);
+	}
+	p {
+		margin: 0;
+		@include font(16px, 1.7em);
+	}
+}
+
+/* aboutArc */
+.aboutArcSection {
+	@include grid(grid-template-columns, 2fr 2fr 1fr, 28px);
+	margin-bottom: 114px;
+}
+.aboutArcImageWrapper {
+	padding: 40px 0;
+	background: linear-gradient(90deg, $brandColor 50%, transparent 50%);
+}
+.redBlock {
+	background-color: $brandColor;
+	width: 409px;
+}
+.aboutArcImageWrapper {
+	position: relative;
+	display: grid;
+	align-items: center;
+
+	img {
+		width: 100%;
+		height: auto;
+	}
+}
+.arcImageText {
+	position: absolute;
+	left: 50%;
+	top: 35%;
+	font-size: 76px;
+	line-height: 1em;
+	text-transform: uppercase;
+	max-width: 267px;
+	margin: 0;
+}
+
+// Accorderon
+.aboutArcDrop {
+	display: grid;
+	justify-content: center;
+	align-content: center;
+	grid-gap: 25px;
+	padding: 0 80px;
+}
+.dropListHeaderWrapper {
+	@include grid(grid-template-columns, 1fr auto);
+	align-items: center;
+	cursor: pointer;
+}
+.dropHeader {
+	font-size: 21px;
+	margin: 0;
+}
+.dropListItem {
+	border-bottom: solid 1px rgba(255, 255, 255, 0.2);
+	padding-bottom: 20px;
+	line-height: 1.8em;
+
+	&:last-of-type {
+		border-bottom: none;
+	}
+}
+.dropText {
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.3s ease-out;
+	p {
+		padding-top: 20px;
+		margin: 0;
+		font-size: 16px;
+	}
+}
+.svgAccordeon {
+	width: 20px;
+	height: 20px;
+}
+.svgAccordeonLine {
+	stroke: #fff;
+	stroke-width: 2px;
+	transition: all 0.3s ease-out;
+	transform-origin: 50%;
+}
+.svgAccordeonLine-active {
+	transform: scale(0);
+}
+
+/* Video */
+.aboutArcVideo {
+	padding: 40px 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+.aboutArcPlayer {
+	max-width: 400px;
+	height: 680px;
+	transition: filter 1s ease;
+	&.player-active:hover {
+		filter: brightness(80%);
+		cursor: pointer;
+	}
+}
+.playerPlayBut {
+	padding: 0;
+	border: none;
+	background-color: transparent;
+	position: absolute;
+	cursor: pointer;
+	&.video-active {
+		display: none;
+	}
+}
+
+/* TextSlider */
+.textSliderWrapper {
+	max-width: 946px;
+}
+.textSliderSection {
+	display: grid;
+	margin-bottom: 100px;
+	position: relative;
+}
+.textSlide {
+	@include grid(grid-template-columns, auto 1fr, 10px);
+	max-width: 980px;
+	cursor: pointer;
+}
+.textSlideContent {
+	display: grid;
+	grid-gap: 20px;
+}
+.textSlideContentText {
+	@include font(34px, 1.8em, 700);
+}
+.textSlideContentAuthor {
+	@include font(18px, 1.8em);
+
+	span {
+		font-weight: 700;
+	}
+}
+.textSliderDots {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	@include grid(grid-template-columns, repeat(auto-fit, 15px), 11px);
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	justify-content: end;
+	padding-right: 30px;
+
+	li {
+		@include font(0, 0);
+
+		button {
+			display: block;
+			width: 15px;
+			height: 15px;
+			border-radius: 50%;
+			cursor: pointer;
+			background-color: rgba(255, 255, 255, 0.2);
+			transition: all 0.3s ease;
+
+			&:hover {
+				background-color: rgba(255, 255, 255, 0.5);
+			}
+
+			&:focus-visible {
+				border: none;
+				outline: none;
+				box-shadow: 0 0 5px #fff;
+			}
+		}
+
+		&.slick-active button {
+			background-color: #fff;
+		}
+	}
+}
+
+/* Partners */
+.partnersSection {
+	display: grid;
+}
+.partnersWrapper {
+	width: 980px;
+	@include grid(grid-template, repeat(2, auto) / repeat(4, auto), 40px);
+	justify-self: stretch;
+	justify-content: space-between;
+
+	img {
+		justify-self: center;
+		align-self: center;
+	}
+}
+
+/* OurWorks */
+.ourWorksHeaderSection {
+	display: grid;
+	padding-top: 293px;
+	margin-bottom: 35px;
+	background: url('../assets/background/bx_bx-building-house.png') 0px -45px no-repeat;
+}
+.ourWorksHeaderWrapper {
+	@include grid(grid-template-columns, auto 420px, 18px);
+	justify-content: center;
+
+	h2 {
+		@include font(76px, 1em, 700);
+		margin: 0;
+		text-align: right;
+		text-transform: uppercase;
+	}
+	span {
+		@include font(18px, 1em);
+		padding-top: 1em;
+	}
+}
+
+/* ourWorksGallery */
+.ourWorksGallerySection {
+	background: url('../assets/background/bg-map.png') center 180px no-repeat;
+}
+.ourWorksGalleryWrapper {
+	@include grid(grid-template-columns, repeat(5, 1fr), 34px);
+	padding: 0 6px;
+
+	img {
+		width: 100%;
+		height: auto;
+		object-fit: contain;
+	}
+}
+.ourWorksGalleryItem {
+	position: relative;
+	cursor: pointer;
+}
+.ourWorksGalleryHover {
+	display: grid;
+	align-items: flex-end;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.4);
+	opacity: 0;
+	transition: opacity 0.5s ease;
+	&:hover {
+		opacity: 1;
+	}
+}
+.ourWorksGalleryHoverContainer {
+	@include grid(grid-template-rows, repeat(2, auto), 20%);
+	padding: 0 5% 15%;
+
+	h4 {
+		@include font(27px, 1.4em, 700);
+		margin: 0;
+	}
+	button {
+		@include font(12px, inherit, 700);
+		text-transform: uppercase;
+		width: 110px;
+		padding: 5px 0;
+		background-color: #000;
+	}
+}

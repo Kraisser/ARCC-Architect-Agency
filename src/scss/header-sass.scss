@@ -1,3 +1,6 @@
+@import './mixins.scss';
+@import './variables.scss';
+
 .header {
 	position: relative;
 	background-color: grey;
@@ -8,9 +11,7 @@
 	top: 0;
 	left: 0;
 	right: 0;
-	display: grid;
-	grid-template-columns: 275px 1fr auto;
-	grid-template-rows: 135px;
+	@include grid(grid-template, 135px / 275px 1fr auto);
 	border-bottom: 1px solid rgba(255, 255, 255, 0.5);
 	z-index: 5;
 }
@@ -19,9 +20,8 @@
 	display: grid;
 	justify-content: center;
 	align-content: center;
-	color: #fff;
-	font-size: 36px;
 	text-transform: uppercase;
+	@include font(36px);
 }
 .nav {
 	display: grid;
@@ -30,14 +30,11 @@
 .navMenu {
 	margin: 0;
 	padding: 0;
-	display: grid;
-	grid-template: auto / repeat(5, auto);
-	grid-gap: 75px;
+	@include grid(grid-template, auto / repeat(5, auto), 75px);
 	align-content: center;
 	list-style-type: none;
-	color: #fff;
-	font-size: 15px;
 	padding-right: 5%;
+	@include font(15px);
 }
 .menuIconWrapper {
 	display: grid;
@@ -45,10 +42,10 @@
 	position: relative;
 	border-left: 1px solid rgba(255, 255, 255, 0.5);
 	width: 150px;
-}
-.menuIconWrapper img {
-	position: absolute;
-	right: 69px;
+	img {
+		position: absolute;
+		right: 69px;
+	}
 }
 .menuItem {
 	text-transform: uppercase;
@@ -74,80 +71,64 @@
 	right: 0;
 	height: 150px;
 	background-color: rgba(17, 17, 17, 0.8);
-	display: grid;
-	grid-template-columns: 1fr;
+	@include grid(grid-template-columns, 1fr);
 	align-items: center;
 	justify-content: center;
-	font-weight: 700;
-	font-size: 21px;
+	@include font(21px, inherit, 700);
 }
 .sliderDescrContainer {
 	max-width: 1070px;
 	width: 100%;
 	justify-self: center;
-	display: grid;
-	grid-template-columns: auto;
+	@include grid(grid-template-columns, auto);
 }
 .sliderDescrList {
 	margin: 0;
 	padding: 0;
 	counter-reset: slideCounter;
 	color: #fff;
-	display: grid;
-	grid-template-columns: repeat(4, auto);
+	@include grid(grid-template-columns, repeat(4, auto), 7%);
 	justify-content: start;
-	grid-gap: 7%;
+	list-style: none;
 }
 .sliderDescrItem {
-	list-style: none;
 	text-transform: lowercase;
+	&:before {
+		counter-increment: slideCounter;
+		content: counter(slideCounter);
+		margin-right: 38px;
+	}
 }
-.sliderDescrItem:before {
-	counter-increment: slideCounter;
-	content: counter(slideCounter);
-	margin-right: 38px;
-}
-
 .slideTextWrapper {
 	height: 100%;
 	padding-top: 320px;
 	max-width: 708px;
-	color: #fff;
+	h1,
+	p,
+	a {
+		margin: 0;
+	}
+	h1 {
+		@include font(75px, 1.8em);
+	}
+	p {
+		@include font(28px, 1.8em);
+	}
+	a {
+		@include font(28px, 1.8em, 700);
+	}
 }
-.slideTextWrapper h1 {
-	font-size: 75px;
-	line-height: 1.8em;
-	margin: 0;
-}
-.slideTextWrapper p,
-.slideTextWrapper a {
-	font-size: 28px;
-	line-height: 1.8em;
-	margin: 0;
-	color: #fff;
-}
-.slideTextWrapper a {
-	font-weight: 700;
-}
-
 .messagerLinkWrapper {
 	position: absolute;
 	right: 0;
-	display: grid;
-	grid-template-columns: auto auto;
+	@include grid(grid-template-columns, auto auto, 29px);
 	align-items: center;
 	justify-content: center;
-	grid-gap: 29px;
-	background-color: var(--red-color);
-	font-weight: 700;
-	font-size: 16px;
-	color: #fff;
+	background-color: $brandColor;
 	height: 100%;
 	width: 20%;
+	@include font(16px, inherit, 700);
 }
 .messagerLinkText {
 	text-transform: uppercase;
 }
-/*  */
-
-/*  */
