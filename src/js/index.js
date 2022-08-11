@@ -1,7 +1,7 @@
 import 'normalize.css';
 
 import '../scss/common.scss';
-import '../scss/header-sass.scss';
+import '../scss/header.scss';
 import '../scss/main.scss';
 
 import $ from 'jquery';
@@ -10,6 +10,7 @@ import slick from 'slick-carousel';
 import acordeon from './modules/accordeon';
 import videoPlayer from './modules/videoPlayer';
 import gallery from './modules/gallery';
+import smoothScroll from './modules/smooth-scroll';
 
 const accordeonList = document.querySelectorAll('.dropListHeaderWrapper');
 acordeon(accordeonList, '.svgAccordeon');
@@ -30,3 +31,6 @@ $('#textSliderWrapper').slick({
 const galleryBut = document.querySelector('.ourWorksGalleryButton button');
 const galleryWrapper = document.querySelector('.ourWorksGalleryWrapper');
 gallery(galleryWrapper, galleryBut);
+
+const smoothLinks = document.querySelectorAll('.menuItem a');
+smoothScroll(smoothLinks);

@@ -34,8 +34,13 @@
 	align-content: center;
 	list-style-type: none;
 	padding-right: 5%;
-	@include font(15px);
+
+	.menuItem a {
+		@include font(15px);
+		text-decoration: none;
+	}
 }
+
 .menuIconWrapper {
 	display: grid;
 	align-items: center;
