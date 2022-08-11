@@ -9,6 +9,7 @@ import slick from 'slick-carousel';
 
 import acordeon from './modules/accordeon';
 import videoPlayer from './modules/videoPlayer';
+import gallery from './modules/gallery';
 
 const accordeonList = document.querySelectorAll('.dropListHeaderWrapper');
 acordeon(accordeonList, '.svgAccordeon');
@@ -25,3 +26,7 @@ $('#textSliderWrapper').slick({
 	cssEase: 'ease',
 	dotsClass: 'textSliderDots',
 });
+
+const galleryBut = document.querySelector('.ourWorksGalleryButton button');
+const galleryWrapper = document.querySelector('.ourWorksGalleryWrapper');
+gallery(galleryWrapper, galleryBut);

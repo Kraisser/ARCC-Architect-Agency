@@ -268,10 +268,12 @@
 /* ourWorksGallery */
 .ourWorksGallerySection {
 	background: url('../assets/background/bg-map.png') center 180px no-repeat;
+	padding-bottom: 230px;
 }
 .ourWorksGalleryWrapper {
 	@include grid(grid-template-columns, repeat(5, 1fr), 34px);
 	padding: 0 6px;
+	margin-bottom: 51px;
 
 	img {
 		width: 100%;
@@ -282,6 +284,11 @@
 .ourWorksGalleryItem {
 	position: relative;
 	cursor: pointer;
+	opacity: 1;
+	transition: opacity 0.3s ease;
+}
+.ourWorksGalleryItem-appear {
+	opacity: 0;
 }
 .ourWorksGalleryHover {
 	display: grid;
@@ -312,5 +319,101 @@
 		width: 110px;
 		padding: 5px 0;
 		background-color: #000;
+	}
+}
+.ourWorksGalleryButton {
+	display: grid;
+	align-items: center;
+	justify-content: center;
+	button {
+		padding: 35px 140px;
+		background-color: transparent;
+		border: solid #fff 4px;
+		text-transform: uppercase;
+		cursor: pointer;
+		transition: all 0.3s ease;
+		border-radius: 0;
+		@include font(15px, inherit, 900);
+		margin-bottom: 240px;
+
+		&:hover {
+			box-shadow: 0 0 7px 2px #fff;
+		}
+		&:active {
+			transform: scale(0.99);
+		}
+		&.activeLoad {
+			border: solid rgba(255, 255, 255, 0.4) 4px;
+			color: rgba(255, 255, 255, 0.4);
+		}
+	}
+}
+
+.contactUsWrapper {
+	@include grid(grid-template-columns, auto 356px);
+	max-width: 1050px;
+	margin: 0 auto;
+	justify-content: space-between;
+	margin-bottom: 110px;
+
+	button {
+		background-color: $brandColor;
+		@include font(15px, inherit, 700);
+		text-transform: uppercase;
+		cursor: pointer;
+	}
+	h4 {
+		@include font(46px, 1.4em, 700);
+		margin: 0;
+	}
+	p {
+		@include font(18px, 1em, 700);
+		margin: 0;
+	}
+}
+
+.contactInfoWrapper {
+	@include grid(grid-template-columns, repeat(3, 1fr), 88px);
+	max-width: 818px;
+	margin: 0 auto;
+	margin-bottom: 130px;
+
+	.logo {
+		@include font(36px, 1.8em);
+		text-transform: uppercase;
+	}
+	p {
+		margin: 0;
+		@include font(12px, 30px);
+	}
+}
+
+.socialWrapper {
+	@include grid(grid-template-columns, 350px auto);
+	justify-content: space-between;
+	padding: 0 15px;
+	margin: 0 auto;
+
+	p {
+		margin: 0;
+		@include font(14px, inherit, inherit, #a6a6a6);
+
+		span {
+			color: #fff;
+		}
+	}
+}
+.socialList {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	@include grid(grid-template-columns, repeat(4, auto));
+	align-items: center;
+	justify-content: space-between;
+
+	a {
+		@include font(12px, 30px);
+		text-decoration: none;
+		text-transform: uppercase;
 	}
 }
