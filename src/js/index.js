@@ -21,7 +21,6 @@ videoPlayer(videoSrc, playBut);
 
 $('#textSliderWrapper').slick({
 	dots: true,
-	infinite: true,
 	adaptiveHeight: true,
 	arrows: false,
 	cssEase: 'ease',
@@ -34,3 +33,36 @@ gallery(galleryWrapper, galleryBut);
 
 const smoothLinks = document.querySelectorAll('.menuItem a');
 smoothScroll(smoothLinks);
+
+const headerSlider = $('.slidesWrapper').slick({
+	cssEase: 'ease',
+	lazyLoad: 'progressive',
+	prevArrow: $('.slidePrev'),
+	nextArrow: $('.slideNext'),
+});
+
+const headerLogo = $('.logoWrapper');
+
+headerSlider.on('beforeChange', (e, slick, curSlide, nextSlide) => {
+	console.log('slick: ', slick);
+	console.log('curSlide: ', curSlide);
+	console.log('nextSlide: ', nextSlide);
+
+	if (nextSlide === 0) {
+		console.log('homePage');
+		headerLogo.addClass('logoWrapper-black');
+		$('.slideNext').detach().removeClass('inline').appendTo($('header'));
+		$('.slidePrev').detach().removeClass('inline').appendTo($('header'));
+	} else {
+		console.log('inline');
+		$('.slidePrev')
+			.detach()
+			.addClass('inline')
+			.appendTo($(`#slideItem${nextSlide + 1} .slideButWrapper`));
+		$('.slideNext')
+			.detach()
+			.addClass('inline')
+			.appendTo($(`#slideItem${nextSlide + 1} .slideButWrapper`));
+		headerLogo.removeClass('logoWrapper-black');
+	}
+});

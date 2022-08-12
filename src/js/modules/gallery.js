@@ -73,7 +73,6 @@ export default function gallery(wrapper, loadBut) {
 		});
 
 		wrapper.querySelectorAll('.ourWorksGalleryItem-appear').forEach((item) => {
-			console.log(item);
 			setTimeout(() => item.classList.remove('ourWorksGalleryItem-appear'), 0.3);
 		});
 
