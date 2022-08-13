@@ -44,17 +44,11 @@ const headerSlider = $('.slidesWrapper').slick({
 const headerLogo = $('.logoWrapper');
 
 headerSlider.on('beforeChange', (e, slick, curSlide, nextSlide) => {
-	console.log('slick: ', slick);
-	console.log('curSlide: ', curSlide);
-	console.log('nextSlide: ', nextSlide);
-
 	if (nextSlide === 0) {
-		console.log('homePage');
 		headerLogo.addClass('logoWrapper-black');
 		$('.slideNext').detach().removeClass('inline').appendTo($('header'));
 		$('.slidePrev').detach().removeClass('inline').appendTo($('header'));
 	} else {
-		console.log('inline');
 		$('.slidePrev')
 			.detach()
 			.addClass('inline')
