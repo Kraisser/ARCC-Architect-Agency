@@ -31,8 +31,30 @@
 					</ul>
 				</nav>
 				<div class="menuIconWrapper">
-					<img src="./assets/icons/menu-icon.png" alt="menu-icon" />
+					<svg
+						version="1.1"
+						xmlns="http://www.w3.org/2000/svg"
+						width="24"
+						height="24"
+						viewBox="0 0 24 24"
+						class="burgerIcon"
+					>
+						<line x1="4" y1="6" x2="20" y2="6" stroke="#fff" stroke-width="2" />
+						<line x1="10" y1="12" x2="20" y2="12" stroke="#fff" stroke-width="2" />
+						<line x1="4" y1="18" x2="20" y2="18" stroke="#fff" stroke-width="2" />
+						<line x1="4" y1="20" x2="20" y2="4" stroke="#fff" stroke-width="2" />
+						<line x1="4" y1="4" x2="20" y2="20" stroke="#fff" stroke-width="2" />
+					</svg>
 				</div>
+			</div>
+			<div class="burgerList hidden">
+				<ul>
+					<li class="menuItem"><a href="#home">home</a></li>
+					<li class="menuItem"><a href="#about">about us</a></li>
+					<li class="menuItem"><a href="#works">works</a></li>
+					<li class="menuItem"><a href="#blog">blog</a></li>
+					<li class="menuItem"><a href="#contact">contact</a></li>
+				</ul>
 			</div>
 			<div class="slidesWrapper">
 				<div class="slideItem" id="slideItem1">
@@ -49,10 +71,10 @@
 						<div class="sliderDescription">
 							<div class="sliderDescrContainer">
 								<ol class="sliderDescrList">
-									<li class="sliderDescrItem">ARCHITECTURE</li>
-									<li class="sliderDescrItem">INTERIOR DESIGN</li>
-									<li class="sliderDescrItem">LANDSCAPE</li>
-									<li class="sliderDescrItem">ENGINEERING</li>
+									<li class="sliderDescrItem"><span>ARCHITECTURE</span></li>
+									<li class="sliderDescrItem"><span>INTERIOR DESIGN</span></li>
+									<li class="sliderDescrItem"><span>LANDSCAPE</span></li>
+									<li class="sliderDescrItem"><span>ENGINEERING</span></li>
 								</ol>
 							</div>
 
@@ -64,23 +86,25 @@
 					</div>
 				</div>
 				<div class="slideItem" id="slideItem2">
-					<div class="slideTextWrapper">
-						<h1>Space planning</h1>
-						<p>
-							We are architects, planners, and designers doing our best to bring out the best
-							possible building solutions.
-						</p>
-					</div>
-					<div class="sliderDescription emptySlide">
-						<div class="sliderDescrContainer">
-							<ol class="sliderDescrList">
-								<li class="sliderDescrItem emptyItem"></li>
-								<li class="sliderDescrItem emptyItem"></li>
-								<li class="sliderDescrItem emptyItem"></li>
-								<li class="sliderDescrItem emptyItem"></li>
-							</ol>
+					<div class="slideContainer">
+						<div class="slideTextWrapper">
+							<h1>Space planning</h1>
+							<p>
+								We are architects, planners, and designers doing our best to bring out the best
+								possible building solutions.
+							</p>
 						</div>
-						<div class="slideButWrapper"></div>
+						<div class="sliderDescription emptySlide">
+							<div class="sliderDescrContainer">
+								<ol class="sliderDescrList">
+									<li class="sliderDescrItem emptyItem"></li>
+									<li class="sliderDescrItem emptyItem"></li>
+									<li class="sliderDescrItem emptyItem"></li>
+									<li class="sliderDescrItem emptyItem"></li>
+								</ol>
+							</div>
+							<div class="slideButWrapper"></div>
+						</div>
 					</div>
 				</div>
 				<div class="slideItem" id="slideItem3">
@@ -409,7 +433,9 @@
 						<div class="ourWorksGalleryHover">
 							<div class="ourWorksGalleryHoverContainer">
 								<h4>Elevated Building heights</h4>
-								<button>View Details</button>
+								<div>
+									<button>View Details</button>
+								</div>
 							</div>
 						</div>
 						<img src="./assets/images/grant-ritchie-_-gToenDbXg-unsplash.jpg" alt="galleryImage" />

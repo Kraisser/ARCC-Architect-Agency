@@ -11,6 +11,7 @@ import acordeon from './modules/accordeon';
 import videoPlayer from './modules/videoPlayer';
 import gallery from './modules/gallery';
 import smoothScroll from './modules/smooth-scroll';
+import burger from './modules/burger-menu';
 
 const accordeonList = document.querySelectorAll('.dropListHeaderWrapper');
 acordeon(accordeonList, '.svgAccordeon');
@@ -19,12 +20,23 @@ const videoSrc = document.querySelector('#aboutArcPlayer');
 const playBut = document.querySelector('.aboutArcVideo .playerPlayBut');
 videoPlayer(videoSrc, playBut);
 
-$('#textSliderWrapper').slick({
+const textSlider = $('#textSliderWrapper');
+const textSliderWrapper = $('.textSliderSection .contentSize');
+
+textSlider.slick({
 	dots: true,
 	adaptiveHeight: true,
 	arrows: false,
 	cssEase: 'ease',
 	dotsClass: 'textSliderDots',
+	responsive: [
+		{
+			breakpoint: 800,
+			settings: {
+				appendDots: textSliderWrapper,
+			},
+		},
+	],
 });
 
 const galleryBut = document.querySelector('.ourWorksGalleryButton button');
@@ -39,6 +51,7 @@ const headerSlider = $('.slidesWrapper').slick({
 	lazyLoad: 'progressive',
 	prevArrow: $('.slidePrev'),
 	nextArrow: $('.slideNext'),
+	adaptiveHeight: true,
 });
 
 const headerLogo = $('.logoWrapper');
@@ -60,3 +73,8 @@ headerSlider.on('beforeChange', (e, slick, curSlide, nextSlide) => {
 		headerLogo.removeClass('logoWrapper-black');
 	}
 });
+
+const burgerBut = $('.menuIconWrapper .burgerIcon');
+const burgerWrapper = $('.burgerList');
+
+burger(burgerBut, burgerWrapper);
