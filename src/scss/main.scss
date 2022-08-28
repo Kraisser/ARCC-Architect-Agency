@@ -201,6 +201,7 @@
 			display: block;
 			width: 15px;
 			height: 15px;
+			border: none;
 			border-radius: 50%;
 			cursor: pointer;
 			background-color: rgba(255, 255, 255, 0.2);
@@ -324,6 +325,13 @@
 		height: 21px;
 		padding: 5px 0;
 		background-color: #000;
+		border: none;
+		transition: box-shadow 0.3s ease;
+		cursor: pointer;
+
+		&:hover {
+			box-shadow: 0 0 7px 2px rgba(255, 255, 255, 0.5);
+		}
 	}
 }
 .ourWorksGalleryButton {
@@ -374,6 +382,7 @@
 		@include font(15px, inherit, 700);
 		text-transform: uppercase;
 		cursor: pointer;
+		border: none;
 	}
 	h4 {
 		@include font(46px, 1.4em, 700);
