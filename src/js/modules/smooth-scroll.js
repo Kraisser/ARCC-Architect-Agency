@@ -6,7 +6,7 @@ export default function smoothScroll(linkList) {
 
 				const id = item.getAttribute('href').slice(1);
 
-				document.querySelector(`[name=${id}]`).scrollIntoView({
+				document.querySelector(`#${id}`).scrollIntoView({
 					behavior: 'smooth',
 					block: 'start',
 				});
